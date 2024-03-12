@@ -12,8 +12,11 @@
 </head>
 <body>
 
+  @include('layouts.CoffeeLayout.partials.header')
+  
   <main>
     @yield('content')
+    
   </main>
   
 </body>
