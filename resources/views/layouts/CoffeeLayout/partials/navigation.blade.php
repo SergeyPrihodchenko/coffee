@@ -5,10 +5,19 @@
     </button>
     <ul class="coffee__nav-list">
       <li>
-        <a href="/">Главная</a>
+        <x-nav.link :href="route('main')" :active="request()->routeIs('main')" class="coffee__nav-link">
+          Главная
+        </x-nav.link>
       </li>
       <li>
-        <a href="/">Меню</a>
+        <x-nav.link :href="route('main')" :active="request()->routeIs('main')" class="coffee__nav-link">
+          Меню
+        </x-nav.link>
+      </li>
+      <li>
+        <x-nav.link :href="route('about')" :active="request()->routeIs('about')" class="coffee__nav-link">
+          О нас
+        </x-nav.link>
       </li>
     </ul>
 

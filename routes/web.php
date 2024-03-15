@@ -19,7 +19,10 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', [MainPageController::class, 'index']);
+Route::get('/', [MainPageController::class, 'index'])->name('main');
+Route::get('/about', function(){
+  return view('AboutPage.about');
+})->name('about');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
