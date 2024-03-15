@@ -1,0 +1,23 @@
+.banner{
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+}
+.banner::before{
+  content: '';
+  position: absolute;
+  height: 280px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(rgba(255, 255, 255, .63) 0, rgba(255, 255, 255, 0) 100%);
+}
+
+.banner__heading{
+  position: absolute;
+  top: 28%;
+  font-size: 50px;
+  width: 100%;
+  text-align: center;
+}

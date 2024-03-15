@@ -9,6 +9,9 @@ class MainPageController extends Controller
 {
     public function index(): View
     {
-      return view('MainPage.main');
+      return view('MainPage.main', [
+        'title' => 'FUNNY COFFEE BAR', 
+        // 'products'=> []
+      ]);
     }
 }
