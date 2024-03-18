@@ -10,7 +10,7 @@
         <x-product-card 
           description="Фильтр кофе" 
           alt="Фильтр кофе" 
-          image="{{ asset('images/pcoffee-1.jpg') }}" 
+          image="{{ asset('storage/Mi.jpg') }}" 
         />
       </div>
       <div class="swiper-slide">
