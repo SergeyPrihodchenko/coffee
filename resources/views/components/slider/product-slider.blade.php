@@ -8,10 +8,15 @@
       <!-- Slides -->
       <div class="swiper-slide">
         <x-product-card 
+          description="Фильтр кофе2" 
+          alt="Фильтр кофе" 
+          image="{{ Storage::url('images/pcoffee-1.jpg') }}" 
+        />
+        {{-- <x-product-card 
           description="Фильтр кофе" 
           alt="Фильтр кофе" 
           image="{{ asset('images/pcoffee-1.jpg') }}" 
-        />
+        /> --}}
       </div>
       <div class="swiper-slide">
         <x-product-card
