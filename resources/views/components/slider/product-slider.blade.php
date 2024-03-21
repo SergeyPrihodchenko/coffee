@@ -12,17 +12,12 @@
           alt="Фильтр кофе" 
           image="{{ Storage::url('images/pcoffee-1.jpg') }}" 
         />
-        {{-- <x-product-card 
-          description="Фильтр кофе" 
-          alt="Фильтр кофе" 
-          image="{{ asset('images/pcoffee-1.jpg') }}" 
-        /> --}}
       </div>
       <div class="swiper-slide">
         <x-product-card
           description="Матча Латте"
           alt="Матча" 
-          image="{{ asset('images/pinkycoffee-2.jpg') }}"
+          image="{{ asset('storage/images/pinkycoffee-2.jpg') }}"
         />
       </div>
       <div class="swiper-slide">
