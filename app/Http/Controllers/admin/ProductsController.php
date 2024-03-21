@@ -7,11 +7,11 @@ use App\Http\Requests\admin\RequestProduct;
 
 class ProductsController extends Controller
 {
-    public function setCoffee(RequestProduct $request): void
+    public function setCoffee(RequestProduct $request)
     {
         try {
             $validated = $request->validated();
-            dd($validated);
+            return $validated;
         } catch (\Throwable $th) {
             //throw $th;
         }
