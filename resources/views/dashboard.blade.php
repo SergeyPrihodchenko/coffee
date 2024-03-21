@@ -5,20 +5,19 @@
         </h2>
     </x-slot>
         <form class="coffee-form">
-          <div class="space-y-12">
+          <div class="p-8">
             <div class="border-b border-gray-900/10 pb-12">
-              <h2 class="text-base font-semibold leading-7 text-gray-900">Profile</h2>
-              <p class="mt-1 text-sm leading-6 text-gray-600">This information will be displayed publicly so be careful what you share.</p>
+              <h2 class="text-base font-semibold leading-7 text-gray-900">Напитки</h2>
+              <p class="mt-1 text-sm leading-6 text-gray-600">Введите название напитка, добавьте фото и описание.</p>
         
-              <div class="mt-10 grid grid-cols-1 gap-y-8 sm:grid-cols-1">
-                <div class="sm:col-span-4">
-                  <label for="coffee" class="block text-sm font-medium leading-6 text-gray-900">Название</label>
-                  <div class="mt-2">
-                    <div class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-                      <input type="text" name="coffee" id="coffee" class="block flex-1 border-0 bg-white py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6 title" placeholder="Название напитка">
-                    </div>
+              <div class="sm:col-span-4 my-8">
+                <label for="coffee" class="block text-sm font-medium leading-6 text-gray-900">Название</label>
+                <div class="mt-2">
+                  <div class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                    <input type="text" name="coffee" id="coffee" class="block flex-1 border-0 bg-white py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6 title" placeholder="Название напитка">
                   </div>
                 </div>
+              </div>
 
                 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                   <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -42,12 +41,12 @@
                   </div>
                 </div>
         
-                <div class="col-span-full">
-                  <label for="about" class="block text-sm font-medium leading-6 text-gray-900">About</label>
+                <div class="col-span-full my-4">
+                  <label for="about" class="block text-sm font-medium leading-6 text-gray-900">Описание</label>
                   <div class="mt-2">
                     <textarea id="about" name="about" rows="3" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 description"></textarea>
                   </div>
-                  <p class="mt-3 text-sm leading-6 text-gray-600">Write a few sentences about yourself.</p>
+                  <p class="mt-3 text-sm leading-6 text-gray-600" style="color: red">Правила ввода текста которы я еще не придумал!</p>
                 </div>
     
           <div class="mt-6 flex items-center justify-end gap-x-6">
