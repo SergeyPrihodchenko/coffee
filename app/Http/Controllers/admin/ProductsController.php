@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\admin\RequestProduct;
 use App\Models\Coffee;
+use App\Models\Sweet;
 
 class ProductsController extends Controller
 {
@@ -40,7 +41,7 @@ class ProductsController extends Controller
 
         $validated['img'] = $path;
 
-        Coffee::create($validated);
+        Sweet::create($validated);
     }
 
     public function deleteSweet(RequestProduct $request): void

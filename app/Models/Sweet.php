@@ -14,7 +14,7 @@ class Sweet extends Model
     protected $fillable = [
         'id',
         'title',
-        'descripton',
+        'description',
         'img'
     ];
 }
