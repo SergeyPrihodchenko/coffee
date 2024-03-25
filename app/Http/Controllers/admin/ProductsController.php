@@ -9,6 +9,14 @@ use App\Models\Sweet;
 
 class ProductsController extends Controller
 {
+
+    public function dashboardDelete()
+    {
+        $coffees = Coffee::all()->toArray();
+        $sweets = Sweet::all()->toArray();
+        return view('dashboardDelete', ['coffees' => $coffees, 'sweets' => $sweets]);
+    }
+
     public function setCoffee(RequestProduct $request):void
     {
         $validated = $request->validated();
@@ -22,13 +30,10 @@ class ProductsController extends Controller
         Coffee::create($validated);
     }
 
-    public function deleteCoffee(RequestProduct $request): void
+    public function deleteCoffee($id)
     {
-        try {
-            $validated = $request->validated();
-        } catch (\Throwable $th) {
-            //throw $th;
-        }
+        Coffee::destroy($id);
+        return redirect('/dashboardDelete');
     }
 
     public function setSweet(RequestProduct $request): void
@@ -44,12 +49,9 @@ class ProductsController extends Controller
         Sweet::create($validated);
     }
 
-    public function deleteSweet(RequestProduct $request): void
+    public function deleteSweet($id)
     {
-        try {
-            $validated = $request->validated();
-        } catch (\Throwable $th) {
-            //throw $th;
-        }
+        Sweet::destroy($id);
+        return redirect('/dashboardDelete');
     }
 }
