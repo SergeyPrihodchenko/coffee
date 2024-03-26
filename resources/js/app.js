@@ -5,6 +5,7 @@ import 'animate.css';
 
 
 import './bootstrap';
+import './dashboardDelete';
 import './header';
 import './product-slider';
 import './dashboard';
