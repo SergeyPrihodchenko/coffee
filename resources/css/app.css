@@ -34,3 +34,7 @@
 .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal{
   bottom: 0;
 }
+
+.display-hiden {
+  display: none;
+}

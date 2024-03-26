@@ -24,12 +24,14 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/dashboardDelete', [ProductsController::class, 'dashboardDelete'])->middleware(['auth', 'verified'])->name('dashboard.delete');
+
 Route::middleware(['auth'])->group(function () {
     Route::post('admin/product/setCoffee', [ProductsController::class, 'setCoffee'])->name('setCoffee');
     Route::post('admin/product/setSweet', [ProductsController::class, 'setSweet'])->name('setSweet');
 
-    Route::delete('admin/product/deleteCoffee', [ProductsController::class, 'deleteCoffee'])->name('deleteCoffee');
-    Route::delete('admin/product/deleteSweet', [ProductsController::class, 'deleteSweet'])->name('deleteSweet');
+    Route::get('admin/product/deleteCoffee/{id}', [ProductsController::class, 'deleteCoffee'])->name('deleteCoffee');
+    Route::get('admin/product/deleteSweet/{id}', [ProductsController::class, 'deleteSweet'])->name('deleteSweet');
 });
 
 require __DIR__.'/auth.php';
