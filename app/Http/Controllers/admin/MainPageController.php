@@ -21,7 +21,7 @@ class MainPageController extends Controller
       
       return view('Admin.main.main', [
         'list' => MainPage::all()->toArray(),
-        'title' => $main_page->main_heading
+        'title' => $main_page->main_heading ?? ''
       ]);
     }
 
