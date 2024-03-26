@@ -40,7 +40,7 @@ fileInput.addEventListener('change', (e) => {
         img.src = reader.result;
         img.width = 190;
         img.height = 190;
-        img.alt = 'not loding IMG';
+        img.alt = 'not loading IMG';
         imgInp.removeChild(imgInp.lastChild);
         imgInp.append(img);
     }
