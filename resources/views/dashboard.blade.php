@@ -4,6 +4,7 @@
             {{ __('Панелька добавления') }}
         </h2>
     </x-slot>
+
      <div class="relative mt-2.5 ml-5 p-3">
           <div class="absolute inset-y-0 left-0 flex items-center">
             <label for="product" class="sr-only">product</label>

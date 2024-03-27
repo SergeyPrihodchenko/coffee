@@ -2,7 +2,8 @@
 
 use App\Http\Controllers\admin\ProductsController;
 use App\Http\Controllers\MainPage\MainPageController;
-  use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\admin\MainPageController as AdminMainPageController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,12 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/dashboardDelete', [ProductsController::class, 'dashboardDelete'])->middleware(['auth', 'verified'])->name('dashboard.delete');
+
+Route::middleware(['auth'])->group(function () {
+  Route::get('/settings/main', [AdminMainPageController::class, 'index'])->name('admin.main');
+  Route::post('/settings/main', [AdminMainPageController::class, 'store'])->name('main.store');
+});
+
 
 Route::middleware(['auth'])->group(function () {
     Route::post('admin/product/setCoffee', [ProductsController::class, 'setCoffee'])->name('setCoffee');

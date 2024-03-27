@@ -5,9 +5,9 @@ import 'animate.css';
 
 
 import './bootstrap';
-import './dashboardDelete';
 import './header';
 import './product-slider';
+import './dashboardDelete';
 import './dashboard';
 
 import Alpine from 'alpinejs';

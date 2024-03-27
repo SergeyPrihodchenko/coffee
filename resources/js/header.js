@@ -1,7 +1,7 @@
 
 
 window.addEventListener('DOMContentLoaded', ()=>{
-  const header = document.querySelector('.header'); // элемент header
+const header = document.querySelector('.header'); // элемент header
 const burger = header.querySelector('.burger'); // кнопка меню
 const nav = header.querySelector('.coffee__nav'); // блок с навигацией
 const clsNav = nav.querySelector('.close__nav'); // кнопка закрытия меню

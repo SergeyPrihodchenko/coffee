@@ -5,6 +5,8 @@
   <figure class="mb-0">
     <img src="{{ $image }}"
         alt="{{ $alt }}">
-    <figcaption class="font-light text-2xl lg:text-xl">{{ $description }}</figcaption>
+    <figcaption class="font-light text-2xl lg:text-xl">
+      {{ $description }}
+    </figcaption>
   </figure>
 </div>
