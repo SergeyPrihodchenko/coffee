@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\admin\RequestProduct;
 use App\Models\Coffee;
 use App\Models\Sweet;
+use Illuminate\Support\Facades\Storage;
 
 class ProductsController extends Controller
 {
@@ -32,6 +33,10 @@ class ProductsController extends Controller
 
     public function deleteCoffee($id)
     {
+        $coffee = Coffee::find($id);
+        $path = $coffee['img'];
+        $path = str_replace('/storage','/public', $path);
+        Storage::delete($path);
         Coffee::destroy($id);
         return redirect('/dashboardDelete');
     }
@@ -51,6 +56,10 @@ class ProductsController extends Controller
 
     public function deleteSweet($id)
     {
+        $sweet = Sweet::find($id);
+        $path = $sweet['img'];
+        $path = str_replace('/storage','/public', $path);
+        Storage::delete($path);
         Sweet::destroy($id);
         return redirect('/dashboardDelete');
     }
