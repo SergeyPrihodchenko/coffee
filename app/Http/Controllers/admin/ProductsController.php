@@ -15,7 +15,7 @@ class ProductsController extends Controller
     {
         $coffees = Coffee::all()->toArray();
         $sweets = Sweet::all()->toArray();
-        return view('dashboardDelete', ['coffees' => $coffees, 'sweets' => $sweets]);
+        return view('dashboardDelete', ['coffees' => $coffees, 'sweets' => $sweets, 'status' => '']);
     }
 
     public function setCoffee(RequestProduct $request):void
@@ -37,8 +37,13 @@ class ProductsController extends Controller
         $path = $coffee['img'];
         $path = str_replace('/storage','/public', $path);
         Storage::delete($path);
-        Coffee::destroy($id);
-        return redirect('/dashboardDelete');
+        $response = Coffee::destroy($id);
+        if($response != false) {
+            $response = 'Успешно удалено!';
+        } else {
+            $response = 'Ошибка при удалении!';
+        }
+        return redirect('/dashboardDelete')->with('status', $response);
     }
 
     public function setSweet(RequestProduct $request): void
@@ -60,7 +65,12 @@ class ProductsController extends Controller
         $path = $sweet['img'];
         $path = str_replace('/storage','/public', $path);
         Storage::delete($path);
-        Sweet::destroy($id);
-        return redirect('/dashboardDelete');
+        $response = Sweet::destroy($id);
+        if($response != false) {
+            $response = 'Успешно удалено!';
+        } else {
+            $response = 'Ошибка при удалении!';
+        }
+        return redirect('/dashboardDelete')->with('response', $response);
     }
 }

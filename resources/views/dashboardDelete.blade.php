@@ -4,6 +4,7 @@
             {{ __('Панелька добавления') }}
         </h2>
     </x-slot>
+    <h3>{{!empty($status) ? $status : ''}}</h3>
     <div class="">
       <div class="relative mb-5 mt-2.5 ml-5 p-3">
         <div class="absolute inset-y-0 left-0 flex items-center border-3">
