@@ -3,6 +3,7 @@
 use App\Http\Controllers\admin\ProductsController;
 use App\Http\Controllers\MainPage\MainPageController;
 use App\Http\Controllers\admin\MainPageController as AdminMainPageController;
+use App\Http\Controllers\MenuPageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [MainPageController::class, 'index'])->name('main');
+Route::get('/menu', [MenuPageController::class, 'index'])->name('menu');
+
+
+
 Route::get('/about', function(){
   return view('AboutPage.about');
 })->name('about');
