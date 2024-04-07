@@ -15,9 +15,10 @@
   @include('layouts.CoffeeLayout.partials.header')
   
   <main>
-    @yield('content')
-    
+    @yield('content')    
   </main>
   
+  <script src="{{ asset('js/header.js') }}"></script>
+  @yield('scripts')
 </body>
 </html>
