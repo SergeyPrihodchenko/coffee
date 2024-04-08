@@ -47,3 +47,4 @@
       </table>
     </div>
 </x-app-layout>
+@vite('resources/js/dashboardDelete.js')
