@@ -8,10 +8,10 @@ const observer = new IntersectionObserver(entries => {
     // если элемент появился
     if (entry.isIntersecting) {
       // добавить ему CSS-класс
-      block.classList.add('animate__animated','animate__fadeInLeft');
+      block.classList.add('animate__animated','animate__fadeInUp');
       return;
     }
-    block.classList.remove('animate__animated','animate__fadeInLeft');
+    block.classList.remove('animate__animated','animate__fadeInUp');
 
   });
 });
