@@ -44,9 +44,10 @@
           <img src="{{$item['banner_img_path']}}" alt="">
         </div>
       </div>
-        
       @endforeach
     </div>
+
+    -{{ session('success') }}
 
   </div>
 </x-app-layout>

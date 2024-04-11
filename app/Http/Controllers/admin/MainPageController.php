@@ -54,8 +54,9 @@ class MainPageController extends Controller
         $main_page->main_heading = $heading;
         $main_page->save();
  
-        // return redirect()->back()->with('success', 'Заголовок и изображение успешно обновлены');
-        return redirect(route('admin.main'));
+        return redirect()->back()->with('success', 'Заголовок и изображение успешно обновлены');
+        // return redirect(route('admin.main'));
+        // return redirect()->back()->with('status', 'Update!');
     }
 
     public function setHeading(MainPage $mainPage) 
