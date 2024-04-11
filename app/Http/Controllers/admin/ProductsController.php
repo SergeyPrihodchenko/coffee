@@ -18,7 +18,7 @@ class ProductsController extends Controller
         return view('dashboardDelete', ['coffees' => $coffees, 'sweets' => $sweets, 'status' => '']);
     }
 
-    public function setCoffee(RequestProduct $request):void
+    public function setCoffee(RequestProduct $request)
     {
         $validated = $request->validated();
 
@@ -29,6 +29,8 @@ class ProductsController extends Controller
         $validated['img'] = $path;
 
         Coffee::create($validated);
+
+        redirect()->route('main');
     }
 
     public function deleteCoffee($id)

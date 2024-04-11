@@ -51,7 +51,7 @@ coffeeForm.addEventListener('submit', (e) => {
     formData.append('description', descriptionInp.value);
     formData.append('img', fileInput.files[0]);
 
-    axios.post('admin/product/' + path, formData, {
+    axios.post('/settings/' + path, formData, {
         headers: {
             "Content-Type": 'multipart/form-data'
         }
