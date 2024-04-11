@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\admin\RequestProduct;
 use App\Models\Coffee;
 use App\Models\Sweet;
+use Illuminate\Support\Facades\Storage;
 
 class ProductsController extends Controller
 {
@@ -14,7 +15,7 @@ class ProductsController extends Controller
     {
         $coffees = Coffee::all()->toArray();
         $sweets = Sweet::all()->toArray();
-        return view('dashboardDelete', ['coffees' => $coffees, 'sweets' => $sweets]);
+        return view('dashboardDelete', ['coffees' => $coffees, 'sweets' => $sweets, 'status' => '']);
     }
 
     public function setCoffee(RequestProduct $request):void
@@ -32,8 +33,17 @@ class ProductsController extends Controller
 
     public function deleteCoffee($id)
     {
-        Coffee::destroy($id);
-        return redirect('/dashboardDelete');
+        $coffee = Coffee::find($id);
+        $path = $coffee['img'];
+        $path = str_replace('/storage','/public', $path);
+        Storage::delete($path);
+        $response = Coffee::destroy($id);
+        if($response != false) {
+            $response = 'Успешно удалено!';
+        } else {
+            $response = 'Ошибка при удалении!';
+        }
+        return redirect('/dashboardDelete')->with('status', $response);
     }
 
     public function setSweet(RequestProduct $request): void
@@ -51,7 +61,16 @@ class ProductsController extends Controller
 
     public function deleteSweet($id)
     {
-        Sweet::destroy($id);
-        return redirect('/dashboardDelete');
+        $sweet = Sweet::find($id);
+        $path = $sweet['img'];
+        $path = str_replace('/storage','/public', $path);
+        Storage::delete($path);
+        $response = Sweet::destroy($id);
+        if($response != false) {
+            $response = 'Успешно удалено!';
+        } else {
+            $response = 'Ошибка при удалении!';
+        }
+        return redirect('/dashboardDelete')->with('response', $response);
     }
 }

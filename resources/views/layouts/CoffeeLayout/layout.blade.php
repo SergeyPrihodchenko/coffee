@@ -18,7 +18,8 @@
     @yield('content')    
   </main>
 
-  <script src="{{ asset('js/header.js') }}"></script>
+  
+  @vite('resources/js/header.js')
   @yield('scripts')
 </body>
 </html>

@@ -67,4 +67,4 @@
           </div>
         </form>
 </x-app-layout>
-@vite(['resources/js/dashboard.js'])
+@vite('resources/js/dasboard.js')

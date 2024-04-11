@@ -10,7 +10,7 @@
         </x-nav.link>
       </li>
       <li>
-        <x-nav.link :href="route('main')" :active="request()->routeIs('main')" class="coffee__nav-link">
+        <x-nav.link :href="route('menu')" :active="request()->routeIs('menu')" class="coffee__nav-link">
           Меню
         </x-nav.link>
       </li>
