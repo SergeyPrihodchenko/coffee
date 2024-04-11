@@ -16,8 +16,11 @@
         @slot('alt')
           {{ $drink['title'] }}
         @endslot
-        @slot('description')
+        @slot('title')
             {{ $drink['title'] }}
+        @endslot
+        @slot('description')
+            {{ $drink['description'] }}
         @endslot
       @endcomponent
 
@@ -27,3 +30,5 @@
   </div>
 </div>
 @endsection
+
+@vite('resources/js/cards.js')

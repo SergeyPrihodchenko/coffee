@@ -1,6 +1,7 @@
 import Swiper from 'swiper/bundle';
 import { Pagination, Navigation } from 'swiper/modules';
 
+
 const swiper = new Swiper('.swiper', {
   // Optional parameters
   modules: [Pagination, Navigation],
@@ -46,4 +47,7 @@ const swiper = new Swiper('.swiper', {
   //   el: '.swiper-scrollbar',
   // },
 });
+
+
+
 

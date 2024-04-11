@@ -9,11 +9,6 @@
       <!-- Slides -->
       @foreach ($drinks as $drink)
       <div class="swiper-slide">
-        {{-- <x-product-card 
-          description={{ $drink['description'] }} 
-          alt={{ $drink['title'] }} 
-          image={{ $drink['img'] }}
-        /> --}}
         @component('components.product-card.index')
           @slot('image')
             {{ $drink['img'] }}
@@ -21,8 +16,11 @@
           @slot('alt')
             {{ $drink['title'] }}
           @endslot
-          @slot('description')
+          @slot('title')
               {{ $drink['title'] }}
+          @endslot
+          @slot('description')
+            {{ $drink['description'] }}
           @endslot
         @endcomponent
       </div>        

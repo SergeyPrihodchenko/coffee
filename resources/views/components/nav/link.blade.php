@@ -1,7 +1,7 @@
 
 @php
 $classes = ($active ?? false)
-            ? 'text-purple-500'
+            ? 'text-[#eeb30f]'
             : 'text-[#242424]';
 @endphp
 

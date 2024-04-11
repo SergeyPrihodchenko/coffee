@@ -29,5 +29,6 @@
 @endsection
 
 @section('scripts')
-<script src="{{ asset('js/onScroll.js') }}"></script>
+  @vite('resources/js/onScroll.js')
+  @vite('resources/js/cards.js')
 @endsection
