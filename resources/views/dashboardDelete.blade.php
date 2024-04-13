@@ -4,7 +4,7 @@
             {{ __('Панелька добавления') }}
         </h2>
     </x-slot>
-    <h3>{{!empty($status) ? $status : ''}}</h3>
+      <h3 class="status-for-delete">{{!empty(session('status')) ? session('status') : ''}}</h3>
     <div class="">
       <div class="relative mb-5 mt-2.5 ml-5 p-3">
         <div class="absolute inset-y-0 left-0 flex items-center border-3">
@@ -31,7 +31,7 @@
           <tr>
             <td>{{$coffee['title']}}</td>
             <td><img width="200" height="200" src="{{asset($coffee['img'])}}" class="img-thumbnail" alt="..."></td>
-            <td><a href="admin/product/deleteCoffee/{{$coffee['id']}}"><button type="button" class="btn btn-danger">Delete</button></a></td>
+            <td><a href="/settings/deleteCoffee/{{$coffee['id']}}"><button type="button" class="btn btn-danger">Delete</button></a></td>
           </tr>
           @endforeach
         </tbody>
@@ -40,7 +40,7 @@
           <tr>
             <td>{{$sweet['title']}}</td>
             <td><img width="200" height="200" src="{{asset($sweet['img'])}}" class="img-thumbnail" alt="..."></td>
-            <td><a href="admin/product/deleteSweet/{{$sweet['id']}}"><button type="button" class="btn btn-danger">Delete</button></a></td>
+            <td><a href="/settings/deleteSweet/{{$sweet['id']}}"><button type="button" class="btn btn-danger">Delete</button></a></td>
           </tr>
           @endforeach
         </tbody>

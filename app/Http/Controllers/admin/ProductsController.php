@@ -11,6 +11,11 @@ use Illuminate\Support\Facades\Storage;
 class ProductsController extends Controller
 {
 
+    public function productPanel()
+    {
+        return view('dashboard');
+    }
+
     public function dashboardDelete()
     {
         $coffees = Coffee::all()->toArray();
@@ -29,26 +34,22 @@ class ProductsController extends Controller
         $validated['img'] = $path;
 
         Coffee::create($validated);
-
-        redirect()->route('main');
     }
 
     public function deleteCoffee($id)
     {
         $coffee = Coffee::find($id);
+
         $path = $coffee['img'];
+
         $path = str_replace('/storage','/public', $path);
+
         Storage::delete($path);
+        
         $response = Coffee::destroy($id);
-        if($response != false) {
-            $response = 'Успешно удалено!';
-        } else {
-            $response = 'Ошибка при удалении!';
-        }
-        return redirect('/dashboardDelete')->with('status', $response);
     }
 
-    public function setSweet(RequestProduct $request): void
+    public function setSweet(RequestProduct $request)
     {
         $validated = $request->validated();
 
@@ -59,6 +60,16 @@ class ProductsController extends Controller
         $validated['img'] = $path;
 
         Sweet::create($validated);
+
+        $result = true;
+
+        if($result) {
+            $result = 'Запись добавлена!';
+        } else {
+            $result = 'Ошибка при добавлении!';
+        }
+    
+        return redirect()->back()->with('status', $result);
     }
 
     public function deleteSweet($id)
@@ -73,6 +84,6 @@ class ProductsController extends Controller
         } else {
             $response = 'Ошибка при удалении!';
         }
-        return redirect('/dashboardDelete')->with('response', $response);
+        return redirect()->back()->with('status', $response);
     }
 }
