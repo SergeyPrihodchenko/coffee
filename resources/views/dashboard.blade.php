@@ -21,8 +21,9 @@
         <form class="coffee-form">
           <div class="p-8">
             <div class="border-b border-gray-900/10 pb-12">
-
         
+              <h3 class="status-for-append">Запись добавлена!</h3>
+
               <div class="sm:col-span-4 my-8 text-center">
                 <label for="coffee" class="block text-sm font-medium leading-6 text-gray-900">Название</label>
                 <div class="mt-2">

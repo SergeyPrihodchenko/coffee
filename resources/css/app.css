@@ -39,3 +39,18 @@
 .display-hiden {
   display: none;
 }
+
+.status-for-delete {
+  margin-left: 20px;
+  padding: 10px 10px;
+  font-style: italic;
+  font-size: 18px;
+}
+
+.status-for-append {
+  display: none;
+  margin-left: 20px;
+  padding: 10px 10px;
+  font-style: italic;
+  font-size: 18px;
+}
