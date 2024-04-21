@@ -4,7 +4,9 @@
 <div class="w-full mb-4">
   <figure class="">
     <div class="card-item relative overflow-hidden">
-      <img src="{{ $image }}"
+        <img
+          class="card-photo" 
+          src="{{ $image }}"
           alt="{{ $alt }}">
           <div class="card-overlay">
             <i class="bi bi-eye text-6xl text-gray-400"></i>

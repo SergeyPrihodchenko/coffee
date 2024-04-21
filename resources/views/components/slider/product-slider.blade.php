@@ -1,7 +1,6 @@
 @props(['drinks', 'heading'])
-<div class="">
+<div>
   <h2 class="mb-4 text-4xl font-thin">{{ $heading }}</h2>
-
   <!-- Slider main container -->
   <div class="swiper">
     <!-- Additional required wrapper -->
