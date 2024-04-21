@@ -10,14 +10,17 @@
 ></x-page-banner.banner>
 
 <section class="my-6 px-[15px] sm:max-w-[1140px] lg:px-0 lg:mx-auto appear-wrap">
-  <div class="appear">
+  <div class="appear" data-animation="animate__animated animate__fadeInUp" >
     <x-slider.product-slider :drinks=$drinks heading="Продукты"></x-slider.product-slider>
   </div>
   <div class="flex justify-center mt-[15px]">
     <a href="{{ route('menu') }}" class="px-4 py-2 text-decoration-none text-xl border-2 border-[#eeb30f] hover:bg-[#eeb30f] text-[#212529] transition-colors">Меню</a>
   </div>
 
+    <x-location-block.location></x-location-block.location>
+
 </section>
+
 
 
 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis enim at deleniti quo impedit rerum, itaque harum, in recusandae voluptates nihil magni fugit blanditiis dolores! Labore est architecto accusamus corporis.</p>

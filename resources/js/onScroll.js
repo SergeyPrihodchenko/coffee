@@ -1,21 +1,24 @@
-// const block = entry.target.querySelector('.appear');
+let animatedBlocks = document.querySelectorAll('.appear');
+
+const callback = (entries, observer) => {
+  entries.forEach((entry) => {
+    // если элемент появился
+    if(entry.isIntersecting) {
+      if(entry.target.classList.contains('appear')) {
+        entry.target.classList = [...entry.target.classList, entry.target.dataset.animation].join(' ');
+        observer.unobserve(entry.target);
+      }
+    }
+  });
+}
+
+let options = {
+  // root: document.querySelector('.appear-wrap'),
+  threshold: 0
+};
 
 // Создать наблюдателя
-const observer = new IntersectionObserver(entries => {
-   // перебор записей
-   entries.forEach(entry => {
-    const block = entry.target.querySelector('.appear');
-    // если элемент появился
-    if (entry.isIntersecting) {
-      // добавить ему CSS-класс
-      block.classList.add('animate__animated','animate__fadeInUp');
-      return;
-    }
-    block.classList.remove('animate__animated','animate__fadeInUp');
-
-  });
-});
-
+let observer = new IntersectionObserver(callback, options);
 
 // Сообщить наблюдателю, какие элементы следует отслеживать
-observer.observe(document.querySelector('.appear-wrap'));
+animatedBlocks.forEach((elem) => observer.observe(elem));
