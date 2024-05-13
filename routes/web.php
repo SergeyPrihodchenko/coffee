@@ -26,6 +26,10 @@ Route::get('/about', function(){
   return view('AboutPage.about');
 })->name('about');
 
+Route::get('/locations', function(){
+  return view('LocationPage.location');
+})->name('locations');
+
 Route::get('/dashboard', [ProductsController::class, 'productPanel'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/settings/lists', [ProductsController::class, 'dashboardDelete'])->middleware(['auth', 'verified'])->name('dashboard.delete');
