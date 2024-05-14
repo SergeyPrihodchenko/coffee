@@ -18,6 +18,9 @@
     @yield('content')    
   </main>
 
+  <footer>
+      @yield('footer')
+  </footer>
   
   @vite('resources/js/header.js')
   @yield('scripts')

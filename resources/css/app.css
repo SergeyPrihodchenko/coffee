@@ -54,3 +54,15 @@
   font-style: italic;
   font-size: 18px;
 }
+
+.footer {
+  height: 50px;
+
+  background-color: #eeb30f;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  font-weight: 700;
+}

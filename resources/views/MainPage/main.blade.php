@@ -20,15 +20,10 @@
     <x-location-block.location></x-location-block.location>
 
 </section>
+@endsection
 
-
-
-<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis enim at deleniti quo impedit rerum, itaque harum, in recusandae voluptates nihil magni fugit blanditiis dolores! Labore est architecto accusamus corporis.</p>
-<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis enim at deleniti quo impedit rerum, itaque harum, in recusandae voluptates nihil magni fugit blanditiis dolores! Labore est architecto accusamus corporis.</p>
-<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis enim at deleniti quo impedit rerum, itaque harum, in recusandae voluptates nihil magni fugit blanditiis dolores! Labore est architecto accusamus corporis.</p>
-<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis enim at deleniti quo impedit rerum, itaque harum, in recusandae voluptates nihil magni fugit blanditiis dolores! Labore est architecto accusamus corporis.</p>
-<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis enim at deleniti quo impedit rerum, itaque harum, in recusandae voluptates nihil magni fugit blanditiis dolores! Labore est architecto accusamus corporis.</p>
-
+@section('footer')
+  <x-footer.footer/>
 @endsection
 
 @section('scripts')

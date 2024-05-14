@@ -31,4 +31,8 @@
 </div>
 @endsection
 
+@section('footer')
+  <x-footer.footer/>
+@endsection
+
 @vite('resources/js/cards.js')
