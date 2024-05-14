@@ -47,6 +47,14 @@ class ProductsController extends Controller
         Storage::delete($path);
         
         $response = Coffee::destroy($id);
+
+        if($response != false) {
+            $response = 'Успешно удалено!';
+        } else {
+            $response = 'Ошибка при удалении!';
+        }
+
+        return redirect()->back()->with('status', $response);
     }
 
     public function setSweet(RequestProduct $request)

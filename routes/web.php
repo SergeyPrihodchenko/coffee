@@ -34,13 +34,12 @@ Route::get('/dashboard', [ProductsController::class, 'productPanel'])->middlewar
 
 Route::get('/settings/lists', [ProductsController::class, 'dashboardDelete'])->middleware(['auth', 'verified'])->name('dashboard.delete');
 
-Route::middleware(['auth'])->group(function () {
-  Route::get('/settings/main', [AdminMainPageController::class, 'index'])->name('admin.main');
-  Route::post('/settings/main', [AdminMainPageController::class, 'store'])->name('main.store');
-});
-
 
 Route::middleware(['auth'])->group(function () {
+
+    Route::get('/settings/main', [AdminMainPageController::class, 'index'])->name('admin.main');
+    Route::post('/settings/main', [AdminMainPageController::class, 'store'])->name('main.store');
+
     Route::post('settings/setCoffee', [ProductsController::class, 'setCoffee'])->name('setCoffee');
     Route::post('settings/setSweet', [ProductsController::class, 'setSweet'])->name('setSweet');
 
