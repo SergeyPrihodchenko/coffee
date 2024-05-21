@@ -103,10 +103,11 @@
   height: 64px;
   line-height: 64px;
   transition: all 0.3s;
-  span {
-    transition: all 0.3s;
-    transform: scale(1, 1);
-  }
+}
+
+.d-btn span {
+  transition: all 0.3s;
+  transform: scale(1, 1);
 }
 
 .d-btn::before, .d-btn::after {
@@ -196,7 +197,7 @@
 
   border-radius: 20px;
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 .form-modal input {
