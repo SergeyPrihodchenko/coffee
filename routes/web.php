@@ -1,8 +1,10 @@
 <?php
 
-use App\Http\Controllers\admin\ProductsController;
+use App\Http\Controllers\admin\products\ProductsController;
 use App\Http\Controllers\MainPage\MainPageController;
 use App\Http\Controllers\admin\MainPageController as AdminMainPageController;
+use App\Http\Controllers\admin\products\CoffeeController;
+use App\Http\Controllers\admin\products\SweetController;
 use App\Http\Controllers\MenuPageController;
 use Illuminate\Support\Facades\Route;
 
@@ -40,11 +42,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/settings/main', [AdminMainPageController::class, 'index'])->name('admin.main');
     Route::post('/settings/main', [AdminMainPageController::class, 'store'])->name('main.store');
 
-    Route::post('settings/setCoffee', [ProductsController::class, 'setCoffee'])->name('setCoffee');
-    Route::post('settings/setSweet', [ProductsController::class, 'setSweet'])->name('setSweet');
-
-    Route::get('settings/deleteCoffee/{id}', [ProductsController::class, 'deleteCoffee'])->name('deleteCoffee');
-    Route::get('settings/deleteSweet/{id}', [ProductsController::class, 'deleteSweet'])->name('deleteSweet');
+    Route::get('settings/deleteCoffee/{id}', [CoffeeController::class, 'deleteCoffee'])->name('deleteCoffee');
+    Route::post('settings/setCoffee', [CoffeeController::class, 'setCoffee'])->name('setCoffee');
+    
+    Route::get('settings/deleteSweet/{id}', [SweetController::class, 'deleteSweet'])->name('deleteSweet');
+    Route::post('settings/setSweet', [SweetController::class, 'setSweet'])->name('setSweet');
 });
 
 require __DIR__.'/auth.php';

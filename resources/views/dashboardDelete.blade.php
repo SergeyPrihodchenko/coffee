@@ -4,7 +4,9 @@
             {{ __('Панелька добавления') }}
         </h2>
     </x-slot>
-      <h3 class="status-for-delete">{{!empty(session('status')) ? session('status') : ''}}</h3>
+      @if (!empty(session('status')))
+          <h3 class="status-for-delete alert alert-primary" role="alert">{{session('status')}}</h3>
+      @endif
     <div class="">
       <div class="relative mb-5 mt-2.5 ml-5 p-3">
         <div class="absolute inset-y-0 left-0 flex items-center border-3">

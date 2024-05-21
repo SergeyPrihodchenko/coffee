@@ -66,3 +66,143 @@
 
   font-weight: 700;
 }
+
+
+
+/*********** MESSAGER BUTTON */
+
+.container_messager {
+  position: fixed;
+  z-index: 980;
+
+  bottom: 10%;
+  right: 5%;
+
+  background-color: rgba(255, 153, 20, 0.7);
+
+  border-radius: 20px;
+  max-width: 180px;
+  width: 100%;
+}
+
+.container_messager:hover {
+  background-color: rgba(255, 153, 20, 1);
+}
+
+.d-btn {
+  z-index: 990;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+  max-width: 100px;
+  width: 100%;
+  height: 64px;
+  line-height: 64px;
+  transition: all 0.3s;
+  span {
+    transition: all 0.3s;
+    transform: scale(1, 1);
+  }
+}
+
+.d-btn::before, .d-btn::after {
+  content: '';
+  position: absolute;
+  transition: all 0.3s;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.btn-messager::before {
+  opacity: 0;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  transform: scale(1.3, 1.3);
+}
+
+.btn-messager:hover::before {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+
+.btn-messager::after {
+  transition: all 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+}
+
+.btn-messager:hover::after {
+  transform: scale(0, 0);
+  opacity: 0;
+}
+
+.container-modal-messager {
+  z-index: 99;
+  position: fixed;
+
+  bottom: 10%;
+  right: 5%;
+
+  width: 250px;
+  height: 350px;
+
+  border-radius: 20px;
+
+  background-color: white;
+
+  display: none;
+}
+
+.modal-messager {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header-modal {
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  max-height: 70px;
+  height: 100%;
+  margin-bottom: 5px;
+
+  border-radius: 20px;
+}
+
+.display-modal {
+  z-index: 99;
+  flex-grow: 2;
+  max-height: 225px;
+
+  padding: 7px 3px;
+
+  border-radius: 20px;
+
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.form-modal {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;  max-height: 45px;
+  height: 100%;
+  margin-top: 5px;
+
+  border-radius: 20px;
+  display: flex;
+  justify-content: start;
+}
+
+.form-modal input {
+  width: 180px;
+}
+.form-modal button {
+  max-width: 80px;
+  width: 100px;
+}

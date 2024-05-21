@@ -12,6 +12,8 @@
 </head>
 <body>
 
+  @include('layouts.CoffeeLayout.partials.btnMessager')
+  @include('layouts.CoffeeLayout.partials.modal-messager')
   @include('layouts.CoffeeLayout.partials.header')
   
   <main>
