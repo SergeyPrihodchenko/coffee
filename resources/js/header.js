@@ -10,6 +10,18 @@ const buttonMessager = containerMessager.querySelector('.btn-messager'); // кн
 const modalMessager = document.querySelector('.container-modal-messager');
 
 const aticeAnimate = () => {
+
+  if(containerMessager.classList.contains('animate__slideInUp')) {
+    setTimeout(() => {
+      containerMessager.classList.remove('animate__slideInUp');
+      if(containerMessager.classList.contains('animate__tada')) {
+        containerMessager.classList.remove('animate__tada');
+      }
+      setTimeout(() => {
+        containerMessager.classList.add('animate__tada');
+      }, 500);
+    })
+  }
   if(containerMessager.classList.contains('animate__tada')) {
     containerMessager.classList.remove('animate__tada');
   }

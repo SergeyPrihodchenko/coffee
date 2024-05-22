@@ -78,15 +78,18 @@
   bottom: 10%;
   right: 5%;
 
-  background-color: rgba(255, 153, 20, 0.7);
+  background-color: rgba(255, 153, 20, 0.8);
 
   border-radius: 20px;
   max-width: 180px;
   width: 100%;
+
+  border-radius: 20px;
 }
 
 .container_messager:hover {
   background-color: rgba(255, 153, 20, 1);
+  cursor: pointer;
 }
 
 .d-btn {
@@ -183,7 +186,7 @@
   flex-grow: 2;
   max-height: 225px;
 
-  padding: 7px 3px;
+  padding: 8px 6px;
 
   border-radius: 20px;
 
@@ -206,4 +209,21 @@
 .form-modal button {
   max-width: 80px;
   width: 100px;
+}
+
+.display-messages {
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+  width: 100%;
+  padding: 0;
+}
+
+.f-right {
+  align-self: flex-end;
+}
+
+.f-left {
+  align-self: flex-start;
 }
