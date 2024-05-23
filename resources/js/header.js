@@ -9,6 +9,21 @@ const containerMessager = document.querySelector('.container_messager');
 const buttonMessager = containerMessager.querySelector('.btn-messager'); // кнопка чата
 const modalMessager = document.querySelector('.container-modal-messager');
 
+window.onscroll = function() {
+  if (window.scrollY > 100) {
+    header.classList.add("color");
+} else {
+    header.classList.remove("color");
+}
+}
+});
+
+clsNav.addEventListener('click', () => {
+  // nav.classList.remove('animate__slideInUp');
+  // nav.classList.add('animate__slideOutDown');
+  nav.classList.remove('open');
+});
+
 const aticeAnimate = () => {
 
   if(containerMessager.classList.contains('animate__slideInUp')) {
@@ -56,19 +71,4 @@ buttonMessager.addEventListener('click', (e) => {
     containerMessager.style.display = 'none';
     modalMessager.style.display = 'block';
 })
-
-clsNav.addEventListener('click', () => {
-  // nav.classList.remove('animate__slideInUp');
-  // nav.classList.add('animate__slideOutDown');
-  nav.classList.remove('open');
-});
-
-window.onscroll = function() {
-  if (window.scrollY > 100) {
-    header.classList.add("color");
-} else {
-    header.classList.remove("color");
-}
-}
-});
 
