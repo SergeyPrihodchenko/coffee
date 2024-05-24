@@ -8,6 +8,12 @@ window.addEventListener('DOMContentLoaded', ()=>{
   const containerMessager = document.querySelector('.container_messager');
   const buttonMessager = containerMessager.querySelector('.btn-messager'); // кнопка чата
   const modalMessager = document.querySelector('.container-modal-messager');
+  const btnCloseModal = modalMessager.querySelector('.messager-close');
+
+  btnCloseModal.addEventListener('click', () => {
+    modalMessager.style.display = 'none';
+    containerMessager.style.display = 'block';
+  });
   
   const aticeAnimate = () => {
   

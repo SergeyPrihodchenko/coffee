@@ -161,6 +161,7 @@
   border-radius: 20px;
 
   background-color: rgba(255, 183, 0, 0.6);
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
 
   display: none;
 }
@@ -171,6 +172,17 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.messager-close {
+  position: absolute;
+  right: 3px;
+  top: 3px;
+  font-size: 25px;
+}
+
+.messager-close:hover {
+  cursor: pointer;
 }
 
 .header-modal {
@@ -214,40 +226,43 @@
 
   z-index: 99;
   flex-grow: 2;
-  max-height: 225px;
+  max-height: 250px;
 
-  padding: 8px 6px;
+  padding: 12px 8px;
 
   border-radius: 20px;
 
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+
+  overflow: auto;
 }
+
+.display-modal::-webkit-scrollbar-track
+{
+  display: none;
+}
+
+.display-modal::-webkit-scrollbar
+{
+	display: none;
+}
+
+.display-modal::-webkit-scrollbar-thumb
+{
+	display: none;
+}
+
 
 .form-modal {
   background-color: rgba(255,255,255, 0.9);
 
-  max-height: 45px;
-  height: 100%;
+  min-height: 45px;
+  height: auto;
   margin-top: 5px;
 
   border-radius: 20px;
   display: flex;
   justify-content: flex-start;
-}
-
-.form-modal input {
-  width: 210px;
-
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;  
-
-  border: none;
-}
-
-.form-modal input:focus {
-  width: 180px;
-
-  box-shadow: none;
-  border: none
 }
 
 .form-modal button i {
@@ -269,6 +284,7 @@
 }
 
 .f-right {
+  max-width: 225px;
   align-self: flex-end;
 
   padding: 2px 8.3px;
@@ -277,6 +293,7 @@
 }
 
 .f-left {
+  max-width: 225px;
   align-self: flex-start;
 
   padding: 2px 8.3px;
@@ -289,8 +306,77 @@
 }
 
 .input-messager {
-  border: none;
-  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-
+  box-shadow: none;
   font-size: .88em;
+
+  width: 210px;
+
+  border: none;
+}
+
+.input-messager:focus {
+  box-shadow: none;
+  border: none
+}
+
+.btn_img:hover {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color: rgb(87, 87, 87);
+  color: white;
+}
+
+.btn_send:hover {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: rgb(87, 87, 87);
+  color: white;
+}
+
+.f-right:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-bottom: 5px solid gainsboro;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  bottom: 0;
+  right: -2px;
+}
+
+.f-right:before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-bottom: 7px solid gainsboro;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  bottom: 0px;
+  right: -2px;
+}
+
+.f-left:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 5px solid white;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  top: 0;
+  left: -2px;
+}
+
+.f-left:before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 7px solid white;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  top: 0;
+  left: -2px;
 }
