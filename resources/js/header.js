@@ -9,6 +9,34 @@ window.addEventListener('DOMContentLoaded', ()=>{
   const buttonMessager = containerMessager.querySelector('.btn-messager'); // кнопка чата
   const modalMessager = document.querySelector('.container-modal-messager');
   const btnCloseModal = modalMessager.querySelector('.messager-close');
+  const displayMessager = modalMessager.querySelector('.display-messages');
+  const intMessager = modalMessager.querySelector('.input-messager');
+
+  intMessager.addEventListener('focus', () => {
+    const elem = document.createElement('li');
+    elem.classList.add('f-left');
+    elem.classList.add('row-message');
+    elem.classList.add('temp-li');
+    elem.style.display = 'none';
+    displayMessager.appendChild(elem);
+  });
+
+  intMessager.addEventListener('input', (e) => {
+
+    const value = e.target.value;
+
+    const tempLi = document.querySelector('.temp-li');
+
+    if(value.length > 0) {
+      tempLi.style.display = 'inline-block';
+      tempLi.innerHTML = value;
+    }
+
+    if(value.length < 1) {
+      tempLi.style.display = 'none';
+    }
+
+  });
 
   btnCloseModal.addEventListener('click', () => {
     modalMessager.style.display = 'none';
