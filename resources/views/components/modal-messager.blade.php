@@ -11,8 +11,9 @@
             </ul>
         </div>
         <div class="form-modal">
-            <button>img</button>
+            <button><i class="bi bi-image"></i></button>
             <input value="input" type="text" name="" id="" class="input-messager">
-            <button>send</button></div>
+            <button><i class="bi bi-send"></i></button>
+        </div>
     </div>
 </div>

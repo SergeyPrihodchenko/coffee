@@ -226,7 +226,7 @@
 .form-modal {
   background-color: rgba(255,255,255, 0.9);
 
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;  max-height: 45px;
+  max-height: 45px;
   height: 100%;
   margin-top: 5px;
 
@@ -236,8 +236,24 @@
 }
 
 .form-modal input {
-  width: 180px;
+  width: 210px;
+
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;  
+
+  border: none;
 }
+
+.form-modal input:focus {
+  width: 180px;
+
+  box-shadow: none;
+  border: none
+}
+
+.form-modal button i {
+  font-size: 24px;
+}
+
 .form-modal button {
   max-width: 80px;
   width: 100px;
