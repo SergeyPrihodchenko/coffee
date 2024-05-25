@@ -334,3 +334,42 @@
   background-color: rgb(87, 87, 87);
   color: white;
 }
+
+@media (max-width: 668px) {
+  .container-modal-messager {
+    top: 90px;
+    left: 1%;
+    max-width: 98%;
+
+  }
+}
+
+@media (max-width: 399px) {
+  .container-modal-messager {
+    max-height: 560px;
+    height: 100%;
+  }
+
+  .display-modal {
+    max-height: 450px;
+    height: 100%;
+  }
+}
+
+@media (max-height: 378px) {
+  .container-modal-messager {
+    max-width: 96%;
+    left: 1.9%;
+    max-height: 280px;
+    height: 100%;
+  }
+
+  .display-modal {
+    max-height: 280px;
+    height: 100%;
+  }
+
+  .input-messager {
+    width: 80%;
+  }
+}

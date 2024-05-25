@@ -11,6 +11,8 @@ window.addEventListener('DOMContentLoaded', ()=>{
   const btnCloseModal = modalMessager.querySelector('.messager-close');
   const displayMessager = modalMessager.querySelector('.display-messages');
   const intMessager = modalMessager.querySelector('.input-messager');
+  const btnImg = modalMessager.querySelector('.btn_img'); // кнопка добавления картинки
+  const btnSend = modalMessager.querySelector('.btn_send'); // кнопка отправки сообщения
 
   intMessager.addEventListener('focus', () => {
     const elem = document.createElement('li');
