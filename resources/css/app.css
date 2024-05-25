@@ -346,12 +346,12 @@
 
 @media (max-width: 399px) {
   .container-modal-messager {
-    max-height: 560px;
+    max-height: 500px;
     height: 100%;
   }
 
   .display-modal {
-    max-height: 450px;
+    max-height: 400px;
     height: 100%;
   }
 }
