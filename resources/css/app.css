@@ -338,20 +338,20 @@
 @media (max-width: 668px) {
   .container-modal-messager {
     top: 90px;
-    left: 1%;
-    max-width: 98%;
+    left: 3.7%;
+    max-width: 92%;
 
   }
 }
 
 @media (max-width: 399px) {
   .container-modal-messager {
-    max-height: 500px;
+    max-height: 300px;
     height: 100%;
   }
 
   .display-modal {
-    max-height: 400px;
+    max-height: 370px;
     height: 100%;
   }
 }
