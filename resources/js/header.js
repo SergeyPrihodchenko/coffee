@@ -1,5 +1,4 @@
 
-
 window.addEventListener('DOMContentLoaded', ()=>{
   const header = document.querySelector('.header'); // элемент header
   const burger = header.querySelector('.burger'); // кнопка меню
@@ -10,11 +9,11 @@ window.addEventListener('DOMContentLoaded', ()=>{
   const modalMessager = document.querySelector('.container-modal-messager');
   const btnCloseModal = modalMessager.querySelector('.messager-close');
   const displayMessager = modalMessager.querySelector('.display-messages');
-  const intMessager = modalMessager.querySelector('.input-messager');
+  const inpMessager = modalMessager.querySelector('.input-messager');
   const btnImg = modalMessager.querySelector('.btn_img'); // кнопка добавления картинки
   const btnSend = modalMessager.querySelector('.btn_send'); // кнопка отправки сообщения
 
-  intMessager.addEventListener('focus', () => {
+  inpMessager.addEventListener('focus', () => {
     const elem = document.createElement('li');
     elem.classList.add('f-left');
     elem.classList.add('row-message');
@@ -23,7 +22,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
     displayMessager.appendChild(elem);
   });
 
-  intMessager.addEventListener('input', (e) => {
+  inpMessager.addEventListener('input', (e) => {
 
     const value = e.target.value;
 
@@ -84,14 +83,52 @@ window.addEventListener('DOMContentLoaded', ()=>{
     intervalAnimate = setInterval(aticeAnimate, 4000);
   })
   
-  buttonMessager.addEventListener('click', (e) => {
+  buttonMessager.addEventListener('click', async (e) => {
   
-  
-    containerMessager.classList.add('animate__tada');
+    window.axios.post('/messager/render', {
+      
+    })
+    .then((result) => {
+
+      if(result.data) {
+        result.data.messages.map((el) => {
+          const li = document.createElement('li');
+          li.classList.add();
+          li.classList.add(result.data.auth_id == el.user_id ? 'f-left' : 'f-right');
+          li.classList.add('row-message');
+          li.textContent = el.text;
+          displayMessager.appendChild(li);
+        });
+        
+        containerMessager.classList.add('animate__tada');
+      
+        containerMessager.style.display = 'none';
+        modalMessager.style.display = 'block';
+      } else {
+
+        console.log('Авторизуйтесь !');
+        //************************************************** */ надо сделать предупреждение 
+      }
+
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+
     
-      containerMessager.style.display = 'none';
-      modalMessager.style.display = 'block';
   })
+
+  btnSend.addEventListener('click', (e) => {
+    window.axios.post('messager/create', {text: inpMessager.value})
+    .then((res) => {
+      displayMessager.lastElementChild.classList.remove('temp-li');
+      inpMessager.value = '';
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+
+  });
   
   clsNav.addEventListener('click', () => {
     // nav.classList.remove('animate__slideInUp');
@@ -106,6 +143,9 @@ window.addEventListener('DOMContentLoaded', ()=>{
       header.classList.remove("color");
   }
   }
+
+
+  
   });
   
   

@@ -6,6 +6,7 @@ use App\Http\Controllers\admin\MainPageController as AdminMainPageController;
 use App\Http\Controllers\admin\products\CoffeeController;
 use App\Http\Controllers\admin\products\SweetController;
 use App\Http\Controllers\MenuPageController;
+use App\Http\Controllers\MessagerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,6 +37,8 @@ Route::get('/dashboard', [ProductsController::class, 'productPanel'])->middlewar
 
 Route::get('/settings/lists', [ProductsController::class, 'dashboardDelete'])->middleware(['auth', 'verified'])->name('dashboard.delete');
 
+Route::post('/messager/render', [MessagerController::class, 'renderMessages'])->name('messager.render');
+Route::post('messager/create', [MessagerController::class, 'createMessage'])->name('messager.create');
 
 Route::middleware(['auth'])->group(function () {
 

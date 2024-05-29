@@ -7,8 +7,6 @@
         </div>
         <div class="display-modal">
             <ul class="display-messages">
-                <li class="row-message f-left">мне кофе с чаем</li>
-                <li class="row-message f-right">завтра</li>
             </ul>
         </div>
         <div class="form-modal">
