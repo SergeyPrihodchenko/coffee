@@ -89,16 +89,21 @@ window.addEventListener('DOMContentLoaded', ()=>{
       
     })
     .then((result) => {
-
+      
       if(result.data) {
-        result.data.messages.map((el) => {
-          const li = document.createElement('li');
-          li.classList.add();
-          li.classList.add(result.data.auth_id == el.user_id ? 'f-left' : 'f-right');
-          li.classList.add('row-message');
-          li.textContent = el.text;
-          displayMessager.appendChild(li);
-        });
+
+        if(result.data.messages.length > 0) {
+
+          result.data.messages.map((el) => {
+            const li = document.createElement('li');
+            li.classList.add();
+            li.classList.add(result.data.auth_id == el.user_id ? 'f-left' : 'f-right');
+            li.classList.add('row-message');
+            li.textContent = el.text;
+            displayMessager.appendChild(li);
+          });
+
+        }
         
         containerMessager.classList.add('animate__tada');
       

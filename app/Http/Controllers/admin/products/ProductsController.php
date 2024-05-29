@@ -11,14 +11,14 @@ class ProductsController extends Controller
 
     public function productPanel()
     {
-        return view('dashboard');
+        return view('Admin.dashboard');
     }
 
     public function dashboardDelete()
     {
         $coffees = Coffee::all()->toArray();
         $sweets = Sweet::all()->toArray();
-        return view('dashboardDelete', ['coffees' => $coffees, 'sweets' => $sweets, 'status' => '']);
+        return view('Admin.dashboardDelete', ['coffees' => $coffees, 'sweets' => $sweets, 'status' => '']);
     }
     
 }

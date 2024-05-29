@@ -23,6 +23,10 @@
                       {{-- MainPage --}}
                         {{ __('Удаление карточек') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('dashboard.chats')" :active="request()->routeIs('dashboard.chats')">
+                      {{-- MainPage --}}
+                        {{ __('Список чатов') }}
+                    </x-nav-link>
                 </div>
             </div>
 

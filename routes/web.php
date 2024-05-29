@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\ChatController;
 use App\Http\Controllers\admin\products\ProductsController;
 use App\Http\Controllers\MainPage\MainPageController;
 use App\Http\Controllers\admin\MainPageController as AdminMainPageController;
@@ -33,7 +34,8 @@ Route::get('/locations', function(){
   return view('LocationPage.location');
 })->name('locations');
 
-Route::get('/dashboard', [ProductsController::class, 'productPanel'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/settings/add', [ProductsController::class, 'productPanel'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/settings/chats', [ChatController::class, 'chatPanel'])->middleware(['auth', 'verified'])->name('dashboard.chats');
 
 Route::get('/settings/lists', [ProductsController::class, 'dashboardDelete'])->middleware(['auth', 'verified'])->name('dashboard.delete');
 
